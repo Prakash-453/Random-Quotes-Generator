@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quotations</title>
+    <style>
+        button{
+            width: 125px;
+            height: 40px;
+            border-radius: 30px;
+            font-size: 24px;
+            background-color: chartreuse;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="quote" onclick="randomquote(),quotescolor()">Click Me</button>
+    <h1 id="Quotedisplay"></h1>
+
+    <script>
+      let quotes = [
+        "We build our computer (systems) the way we build our cities: over time, without a plan, on top of ruins.",
+        "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
+        "Rules of Optimisation: Rule 1: Don't do it. Rule 2 (for experts only): Don't do it yet.",
+        "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.",
+        "No one in the brief history of computing has ever written a piece of perfect software. It's unlikely that you'll be the first.",
+        "One of the best programming skills you can have is knowing when to walk away for a while.",
+        "It has become appallingly obvious that our technology has exceeded our humanity.",
+        
+        "The greatest danger for most of us is not that our aim is too high and we miss it, but that it is too low and we reach it.",
+        "The only person you are destined to become is the person you decide to be.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.",
+        "The future is not something we enter. The future is something we create.",
+      ];
+
+      function randomquote() {
+        let quotes1 = quotes[Math.floor(Math.random() * quotes.length)];
+        let h1 = document.getElementById("Quotedisplay");
+        h1.innerHTML = quotes1;
+      }
+
+      function quotescolor() {
+        let a = "0123456789ABCDEF";
+        let color = "#";
+        for (i = 0; i < 6; i++) {
+          color = color + a[Math.floor(Math.random() * 16)];
+        }
+        document.body.style.backgroundColor = color;
+      }
+
+    </script>
+  </body>
+</html>
